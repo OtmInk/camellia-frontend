@@ -19,7 +19,7 @@ defineProps({
             <h2>
               <span class="staff-title-star" :style="{ '--staff-star-mask': `url(${capStar})` }"
                 aria-hidden="true"></span>
-              [ 制作人员 ]
+              <span>[ 制作人员 ]</span>
               <span class="staff-outline" aria-hidden="true">STAFF</span>
             </h2>
           </div>
