@@ -40,13 +40,11 @@ defineProps({
   background-color: #e2e2e2;
   background-image: linear-gradient(90deg, #212121 1px, transparent 1px),
     linear-gradient(#212121 1px, transparent 1px),
-    linear-gradient(
-      45deg,
+    linear-gradient(45deg,
       transparent calc(50% - 0.5px),
       #212121 calc(50% - 0.5px),
       #212121 calc(50% + 0.5px),
-      transparent calc(50% + 0.5px)
-    );
+      transparent calc(50% + 0.5px));
   background-position: top left;
   background-size: 100px 100px;
   opacity: 0.04;
@@ -94,7 +92,8 @@ defineProps({
   left: 1923px;
   width: 402px;
   height: 783px;
-  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.3));
+  opacity: 0.6;
 }
 
 .back-squares i {

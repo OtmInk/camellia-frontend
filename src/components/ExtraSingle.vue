@@ -82,7 +82,7 @@ const props = defineProps({
 
 .title-box {
   display: flex;
-  height: 98px;
+  height: 78px;
   margin-top: 4px;
 }
 

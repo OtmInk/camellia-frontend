@@ -68,7 +68,7 @@ function buildAnimation({ paused = false } = {}) {
       0.24
     )
     .from(
-      q('.left-star'),
+      q('.left-star, .right-star'),
       { duration: 0.45, scale: 0, rotation: -90, opacity: 0, ease: 'back.out(2)' },
       0.36
     )
@@ -83,10 +83,9 @@ function buildAnimation({ paused = false } = {}) {
       q('.rank'),
       {
         duration: 0.7,
-        scale: 0.72,
         opacity: 0,
+        x: -200,
         transformOrigin: 'left center',
-        ease: 'back.out(1.4)'
       },
       0.3
     )
@@ -96,6 +95,7 @@ function buildAnimation({ paused = false } = {}) {
       0.5
     )
     .from(q('.brand-logo'), { duration: 0.75, x: 180, opacity: 0 }, 0.16)
+    .from(q('.data-outline'), { duration: 0.75, x: 180, opacity: 0 }, 0.18)
     .from(q('.count-item'), { duration: 0.75, x: 280, opacity: 0, stagger: 0.08 }, 0.28)
     .from(
       q('.count-item .icon'),
@@ -251,6 +251,18 @@ onBeforeUnmount(() => {
     </div>
     <div class="main-right">
       <div class="brand-logo data-header">
+        <img data-v-5421f3fb="" class="right-star" src="/src/assets/otmink-next/left-star.svg" alt=""
+          aria-hidden="true">
+        <svg class="deco-triangles" width="48" height="36" viewBox="0 0 48 36" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M48 24V36H36L48 24Z" fill="#212121" />
+          <path d="M24 0V12H12L24 0Z" fill="#212121" />
+          <path d="M48 12V24H36L48 12Z" fill="#212121" />
+          <path d="M12 12V24H0L12 12Z" fill="#212121" />
+          <path d="M36 12V24H24L36 12Z" fill="#212121" />
+          <path d="M24 24V36H12L24 24Z" fill="#212121" />
+          <path d="M48 0V12H36L48 0Z" fill="#212121" />
+        </svg>
         <span class="data-outline" aria-hidden="true">DATA</span>
         <div class="data-label">
           <span class="data-star" :style="{ '--data-star-mask': `url(${capStar})` }" aria-hidden="true"></span>
@@ -308,6 +320,7 @@ onBeforeUnmount(() => {
   height: 720px;
   overflow: hidden;
   background-color: black;
+  border: 2px solid v-bind('data.dark_color');
 
   > * {
     width: 100%;
@@ -347,42 +360,54 @@ onBeforeUnmount(() => {
 
 .data-header {
   position: absolute;
-  top: 47px;
+  top: 40px;
   left: 0;
   width: 248px;
   height: 224px;
+
+  .right-star {
+    position: absolute;
+    top: 48px;
+    right: 0;
+  }
+
+  .deco-triangles {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .data-outline {
   position: absolute;
-  top: 0;
+  top: -48px;
   left: -8.5px;
   color: transparent;
   font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
   font-size: 256px;
   font-weight: 400;
-  line-height: 224px;
+  line-height: auto;
   letter-spacing: -12.8px;
   -webkit-text-stroke: 1px rgba(33, 33, 33, 0.2);
 }
 
 .data-label {
   position: absolute;
-  top: 152px;
+  top: 164px;
   left: 0;
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Geist', sans-serif;
-  font-size: 16px;
+  font-family: 'Geist', 'HarmonyOS Sans SC', sans-serif;
+  font-size: 20px;
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.8px;
 }
 
 .data-star {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   background: v-bind('data.light_color');
   mask: var(--data-star-mask) center / contain no-repeat;
   -webkit-mask: var(--data-star-mask) center / contain no-repeat;

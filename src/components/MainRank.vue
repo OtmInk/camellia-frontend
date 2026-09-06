@@ -12,10 +12,10 @@ const rank = computed(() => String(data.value.ranking).padStart(2, '0'))
     <div class="rank">{{ rank }}</div>
     <div class="cap">
       <span class="cap-star" :style="{ '--cap-star-mask': `url(${capStar})` }"></span>
-      <span>[ CAP ]</span>
+      <span>[ CAP ] - 社群关注指数</span>
     </div>
     <div class="points">{{ data.score }}</div>
-    <div class="rank-title">社群关注指数</div>
+    <div class="rank-title"></div>
   </div>
 </template>
 
@@ -30,7 +30,7 @@ const rank = computed(() => String(data.value.ranking).padStart(2, '0'))
 .rank {
   position: absolute;
   top: 180px;
-  left: 16px;
+  left: 14px;
   color: v-bind('data.light_color');
   font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
   font-size: 470px;
@@ -53,21 +53,23 @@ const rank = computed(() => String(data.value.ranking).padStart(2, '0'))
 
 .rank-title {
   position: absolute;
-  top: 747px;
+  top: 640px;
   left: 36px;
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 20px;
   letter-spacing: -0.65px;
+  color: v-bind('data.light_color');
 }
 
 .points {
   position: absolute;
-  top: 638px;
+  top: 642px;
   left: 33px;
+  width: 248px;
   font-family: 'Outfit', 'HarmonyOS Sans SC', sans-serif;
   font-size: 96px;
-  line-height: 1;
+  line-height: 1.2;
   letter-spacing: -4.8px;
+  border-bottom: 1px solid #929292;
 }
 
 .cap {
@@ -77,14 +79,14 @@ const rank = computed(() => String(data.value.ranking).padStart(2, '0'))
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Geist', sans-serif;
-  font-size: 16px;
+  font-family: 'Geist', 'HarmonyOS Sans SC', sans-serif;
+  font-size: 20px;
   letter-spacing: -0.8px;
 
   .cap-star {
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
     background: v-bind('data.light_color');
     mask-image: var(--cap-star-mask);
     mask-repeat: no-repeat;

@@ -50,11 +50,11 @@ defineProps({
 }
 
 .main-info {
-  position: absolute;
+  position: fixed;
   z-index: 4;
-  top: 800px;
+  bottom: 0;
+  right: 0;
   left: 0;
-  width: 1920px;
   height: 280px;
   overflow: hidden;
   color: white;
@@ -62,20 +62,20 @@ defineProps({
 
   h1 {
     width: 1580px;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: bold;
-    line-height: 1.17;
+    line-height: 1.5;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    margin-block: -8px;
   }
 }
 
 .info-background {
   position: absolute;
-  inset: -390px 0 auto;
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   opacity: 0.28;
   mix-blend-mode: overlay;
@@ -89,7 +89,7 @@ defineProps({
   flex-direction: column;
   gap: 48px;
   width: 912px;
-  margin: 47px 0 0 320px;
+  margin: 52px 0 0 320px;
 }
 
 .title-block {
