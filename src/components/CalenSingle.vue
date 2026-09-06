@@ -53,12 +53,13 @@ defineProps({ data: Object })
 
   m {
     font-family: 'HarmonyOS Sans SC', sans-serif;
-    font-size: 40px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    letter-spacing: -3.2px;
-    // margin-left: -10px;
-    margin-right: 2px;
+    letter-spacing: unset;
+    margin-left: 4px;
+    margin-right: 16px;
+    display: inline-block;
   }
 }
 
