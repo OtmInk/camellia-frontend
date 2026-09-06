@@ -251,8 +251,7 @@ onBeforeUnmount(() => {
     </div>
     <div class="main-right">
       <div class="brand-logo data-header">
-        <img data-v-5421f3fb="" class="right-star" src="/src/assets/otmink-next/left-star.svg" alt=""
-          aria-hidden="true">
+        <img data-v-5421f3fb="" class="right-star" src="/src/assets/otmink-next/left-star.svg" aria-hidden="true">
         <svg class="deco-triangles" width="48" height="36" viewBox="0 0 48 36" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path d="M48 24V36H36L48 24Z" fill="#212121" />
@@ -272,9 +271,9 @@ onBeforeUnmount(() => {
       <MainCounts />
     </div>
     <div class="video-ornament" aria-hidden="true">
-      <img :src="ornamentLeft" alt="" />
+      <img :src="ornamentLeft" />
       <span><i></i><i></i></span>
-      <img :src="ornamentRight" alt="" />
+      <img :src="ornamentRight" />
     </div>
     <MainInfo />
     <BackgroundImage />

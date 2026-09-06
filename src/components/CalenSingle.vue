@@ -14,7 +14,7 @@ defineProps({ data: Object })
       <div class="ca-subtitle">{{ data.subtitle }}</div>
     </div>
     <div class="ca-cover-frame">
-      <img class="cover" :src="data.cover" alt="" />
+      <img class="cover" :src="data.cover" />
       <div class="ca-cover-decor" aria-hidden="true">
         <i class="ca-cover-corner ca-cover-corner--start"></i>
         <i class="ca-cover-corner ca-cover-corner--end"></i>
@@ -57,7 +57,7 @@ defineProps({ data: Object })
     font-style: normal;
     font-weight: 700;
     letter-spacing: -3.2px;
-    margin-left: -10px;
+    // margin-left: -10px;
     margin-right: 2px;
   }
 }

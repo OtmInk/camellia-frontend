@@ -7,7 +7,7 @@ defineProps({
 
 <template>
   <div class="main-info">
-    <img class="info-background" :src="data.cover_src" alt="" />
+    <img class="info-background" :src="data.cover_src" />
     <div class="main-progress"></div>
     <div class="info-content">
       <div class="title-block">

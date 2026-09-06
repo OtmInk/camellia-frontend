@@ -3,7 +3,7 @@ import logoWatermark from '../assets/otmink-next/logo-watermark.svg'
 </script>
 
 <template>
-  <img class="logo-watermark" :src="logoWatermark" alt="" aria-hidden="true" />
+  <img class="logo-watermark" :src="logoWatermark" aria-hidden="true" />
 </template>
 
 <style scoped>

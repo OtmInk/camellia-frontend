@@ -15,15 +15,13 @@ defineProps({
     <div class="viewlist">
       <div class="end-board">
         <div class="staff-heading">
-          <div>
-            <h2>
-              <span class="staff-title-star" :style="{ '--staff-star-mask': `url(${capStar})` }"
-                aria-hidden="true"></span>
-              <span>[ 制作人员 ]</span>
-              <span class="staff-outline" aria-hidden="true">STAFF</span>
-            </h2>
-          </div>
-          <img class="staff-heading-mark" :src="ornamentRight" alt="" />
+          <h2>
+            <span class="staff-title-star" :style="{ '--staff-star-mask': `url(${capStar})` }"
+              aria-hidden="true"></span>
+            <span>[ 制作人员 ]</span>
+            <span class="staff-outline" aria-hidden="true">STAFF</span>
+          </h2>
+          <img class="staff-heading-mark" :src="ornamentRight" />
         </div>
         <div class="staff-list">
           <div class="staff-single">
@@ -253,6 +251,11 @@ defineProps({
     font-size: 38px;
     line-height: 1.2;
     letter-spacing: -4px;
+    font-weight: bold;
+
+    span {
+      flex-shrink: 0;
+    }
   }
 }
 

@@ -18,9 +18,9 @@ defineProps({
       <span class="pixel-mark"><i></i><i></i><i></i><i></i><i></i></span>
       <strong>{{ title }}</strong>
     </div>
-    <img class="left-triangles" :src="leftTriangles" alt="" aria-hidden="true" />
-    <img class="left-diagonal" :src="leftDiagonal" alt="" aria-hidden="true" />
-    <img class="left-star" :src="leftStar" alt="" aria-hidden="true" />
+    <img class="left-triangles" :src="leftTriangles" aria-hidden="true" />
+    <img class="left-diagonal" :src="leftDiagonal" aria-hidden="true" />
+    <img class="left-star" :src="leftStar" aria-hidden="true" />
   </div>
 </template>
 
@@ -72,18 +72,22 @@ defineProps({
     top: 0;
     left: 0;
   }
+
   i:nth-child(2) {
     top: 6px;
     left: 6px;
   }
+
   i:nth-child(3) {
     top: 12px;
     left: 12px;
   }
+
   i:nth-child(4) {
     top: 0;
     left: 12px;
   }
+
   i:nth-child(5) {
     top: 12px;
     left: 0;

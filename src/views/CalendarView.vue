@@ -129,9 +129,9 @@ onBeforeUnmount(() => {
       <CalenSingle v-for="cad in data.more_data" :key="cad" :data="cad" />
     </div>
     <div class="calendar-ornament" aria-hidden="true">
-      <img :src="ornamentLeft" alt="" />
+      <img :src="ornamentLeft" />
       <span><i></i><i></i></span>
-      <img :src="ornamentRight" alt="" />
+      <img :src="ornamentRight" />
     </div>
     <BackgroundImage />
   </div>
@@ -188,17 +188,20 @@ onBeforeUnmount(() => {
     width: 94px;
     height: 16px;
   }
+
   span {
     position: relative;
     width: 16px;
     height: 16px;
   }
+
   i {
     position: absolute;
     width: 8px;
     height: 8px;
     background: #212121;
   }
+
   i:last-child {
     right: 0;
     bottom: 0;

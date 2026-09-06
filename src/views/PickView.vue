@@ -210,22 +210,16 @@ onBeforeUnmount(() => {
       <PickInfo :picker="data.picker" :reason="data.reason" />
       <div class="video-box" :style="{ background: data.theme_color }">
         <div v-if="data.prevent == 'true'" class="prevent">规避</div>
-        <canvas
-          :src="data.video_src"
-          :class="['video-inner', { preblur: data.prevent == 'true' }]"
-          ref="videoRef"
-          :key="data.video_src"
-          :start-time="Math.floor((data.start_time - data.front_reserved_time) * 1000)"
-          muted
-          video-capture
-        >
+        <canvas :src="data.video_src" :class="['video-inner', { preblur: data.prevent == 'true' }]" ref="videoRef"
+          :key="data.video_src" :start-time="Math.floor((data.start_time - data.front_reserved_time) * 1000)" muted
+          video-capture>
         </canvas>
       </div>
     </div>
     <div class="video-ornament" aria-hidden="true">
-      <img :src="ornamentLeft" alt="" />
+      <img :src="ornamentLeft" />
       <span><i></i><i></i></span>
-      <img :src="ornamentRight" alt="" />
+      <img :src="ornamentRight" />
     </div>
     <MainInfo />
     <BackgroundImage />
@@ -258,6 +252,7 @@ onBeforeUnmount(() => {
   filter: blur(100px);
   // mix-blend-mode: darken;
 }
+
 .video-box {
   position: absolute;
   top: 40px;
@@ -345,10 +340,12 @@ onBeforeUnmount(() => {
     bottom: 0;
   }
 }
+
 .extra-list {
   position: absolute;
   z-index: 100;
 }
+
 .prevent {
   width: 100%;
   height: 100%;
