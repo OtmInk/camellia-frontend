@@ -1,68 +1,101 @@
 <script setup>
 import { data } from '../data/MainView_data.js'
-import { NewspaperFolding } from '@icon-park/vue-next'
+import { computed } from 'vue'
+import capStar from '../assets/otmink-next/cap-star.svg'
+
+const rank = computed(() => String(data.value.ranking).padStart(2, '0'))
 </script>
 
 <template>
   <div class="main-rank">
-    <div class="rank-title">社群关注指数 (CAP)</div>
-    <div class="rank-box">
-      <div>
-        <span class="rank"
-          ><newspaper-folding style="display: inline-flex; align-items: center" theme="outline" />{{
-            data.ranking
-          }}</span
-        >
-      </div>
-      <span class="points">{{ data.score }} POINTS</span>
+    <div class="rank-shadow">{{ rank }}</div>
+    <div class="rank">{{ rank }}</div>
+    <div class="cap">
+      <span class="cap-star" :style="{ '--cap-star-mask': `url(${capStar})` }"></span>
+      <span>[ CAP ] - 社群关注指数</span>
     </div>
+    <div class="points">{{ data.score }}</div>
+    <div class="rank-title"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .main-rank {
-  @include card;
-  display: flex;
-  // flex-grow: 1;
-  flex-shrink: 0;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0.25rem 1rem 1rem 1rem;
-  // background-color: var(--c-accent);
-  background-color: v-bind('data.dark_color');
-  color: white;
+  position: relative;
+  width: 320px;
+  height: 800px;
+  color: #212121;
 }
 
 .rank {
-  display: flex;
-  font-size: 5rem;
-  font-family: Montserrat, sans-serif;
-  font-weight: 600;
-  gap: 0.15em;
-
-  .i-icon {
-    font-size: 0.9em;
-    margin-top: -0.1em;
-  }
+  position: absolute;
+  top: 180px;
+  left: 14px;
+  color: v-bind('data.light_color');
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  font-size: 470px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -23.5px;
 }
 
-.rank-box {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 1em;
+.rank-shadow {
+  position: absolute;
+  top: 140px;
+  left: -58px;
+  color: transparent;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  font-size: 470px;
+  line-height: 1;
+  letter-spacing: -23.5px;
+  -webkit-text-stroke: 1px rgba(33, 33, 33, 0.2);
 }
 
 .rank-title {
-  margin-top: 0.5em;
-  margin-left: auto;
-  font-size: 1.5em;
-  font-weight: bold;
+  position: absolute;
+  top: 640px;
+  left: 36px;
+  font-size: 20px;
+  letter-spacing: -0.65px;
+  color: v-bind('data.light_color');
 }
 
 .points {
-  font-size: 1.25rem;
-  font-weight: 700;
+  position: absolute;
+  top: 642px;
+  left: 33px;
+  width: 248px;
+  font-family: 'Outfit', 'HarmonyOS Sans SC', sans-serif;
+  font-size: 96px;
+  line-height: 1.2;
+  letter-spacing: -4.8px;
+  border-bottom: 1px solid #929292;
+}
+
+.cap {
+  position: absolute;
+  top: 601px;
+  left: 35px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Geist', 'HarmonyOS Sans SC', sans-serif;
+  font-size: 20px;
+  letter-spacing: -0.8px;
+
+  .cap-star {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: v-bind('data.light_color');
+    mask-image: var(--cap-star-mask);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: var(--cap-star-mask);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
 }
 </style>
