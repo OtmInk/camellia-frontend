@@ -39,7 +39,7 @@ const props = defineProps({
 .rank {
   font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
   font-size: 144px;
-  letter-spacing: -4%;
+  letter-spacing: -5px;
   color: #000000;
   min-width: 112px;
   margin-top: -24px;
@@ -51,7 +51,7 @@ const props = defineProps({
   text-align-last: justify;
   font-size: 24px;
   margin-top: -36px;
-  letter-spacing: -5%;
+  letter-spacing: -2px;
   color: #000000;
   white-space: nowrap;
 }

@@ -152,7 +152,7 @@ defineProps({ data: Object })
 
 .ca-cover-rule {
   position: absolute;
-  top: calc(100% + 15px);
+  top: calc(100% + 20px);
   right: 24px;
   left: 0;
   height: 1px;
@@ -162,7 +162,7 @@ defineProps({ data: Object })
 
 .ca-cover-plus {
   position: absolute;
-  top: calc(100% + 9px);
+  top: calc(100% + 14px);
   right: 0;
   width: 13px;
   height: 13px;
